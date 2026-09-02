@@ -32,22 +32,27 @@ def _client() -> httpx.Client:
     )
 
 
-def is_monthly_cohort_link(anchor_text: str, href: str) -> bool:
-    if not href.lower().endswith(".xlsx"):
-        return False
-    text = anchor_text or ""
-    if "翌営業日" in text:
-        return False
-    return "四半期末" in text or "期末を迎えた" in text
-
-
 def list_monthly_xlsx(html: str, base_url: str = INDEX_URL) -> list[tuple[str, str]]:
     soup = BeautifulSoup(html, "html.parser")
     found: list[tuple[str, str]] = []
     for a in soup.find_all("a", href=True):
         href = a["href"].strip()
-        text = a.get_text(" ", strip=True)
-        if is_monthly_cohort_link(text, href):
+        if not href.lower().endswith(".xlsx"):
+            continue
+        # Look at sibling <th> in same <tr> for section heading text
+        text = ""
+        row = a.find_parent("tr")
+        if row:
+            th = row.find("th")
+            if th:
+                text = th.get_text(" ", strip=True)
+        if not text:
+            text = a.get_text(" ", strip=True)
+        if not text:
+            continue
+        if "翌営業日" in text:
+            continue
+        if "四半期末" in text or "期末を迎えた" in text:
             found.append((urljoin(base_url, href), text))
     return found
 
