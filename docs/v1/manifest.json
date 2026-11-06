@@ -1,18 +1,18 @@
 {
   "source": "https://www.jpx.co.jp/listing/event-schedules/financial-announcement/index.html",
-  "fetched_at": "2026-11-05T21:45:09Z",
-  "event_count": 6309,
-  "incoming_count": 3215,
-  "dropped_undated": 25,
-  "dropped_unmapped_fq": 18,
+  "fetched_at": "2026-11-06T21:14:29Z",
+  "event_count": 6521,
+  "incoming_count": 3022,
+  "dropped_undated": 22,
+  "dropped_unmapped_fq": 11,
   "xlsx": [
     {
-      "url": "https://www.jpx.co.jp/listing/event-schedules/financial-announcement/tvdivq0000001ofb-att/kessan08_1002.xlsx",
-      "label": "2026年8月に四半期末又は期末を迎えた会社（2026年10月1日時点） Companies whose end of quarters or fiscal years in August 2026 (as of 2026/10/1)"
+      "url": "https://www.jpx.co.jp/listing/event-schedules/financial-announcement/tvdivq0000001ofb-att/kessan09_1106.xlsx",
+      "label": "2026年9月に四半期末又は期末を迎えた会社（2026年11月5日時点） Companies whose end of quarters or fiscal years in September 2026 (as of 2026/11/5)"
     },
     {
-      "url": "https://www.jpx.co.jp/listing/event-schedules/financial-announcement/tvdivq0000001ofb-att/kessan09_1030.xlsx",
-      "label": "2026年9月に四半期末又は期末を迎えた会社（2026年10月29日時点） Companies whose end of quarters or fiscal years in September 2026 (as of 2026/10/29)"
+      "url": "https://www.jpx.co.jp/listing/event-schedules/financial-announcement/tvdivq0000001ofb-att/kessan10_1106.xlsx",
+      "label": "2026年10月に四半期末又は期末を迎えた会社（2026年11月5日時点） Companies whose end of quarters or fiscal years in October 2026 (as of 2026/11/5)"
     }
   ]
 }
